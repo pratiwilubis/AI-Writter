@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Story Memory</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <input id="storyTitle" class="title-input" placeholder="Judul cerita" />
+    <div class="topbar-right">
+      <label for="modelSelect" class="muted">Model:</label>
+      <select id="modelSelect"></select>
+      <span id="status" class="status">Siap</span>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <section>
+        <h2>Bab</h2>
+        <ul id="chapterList" class="chapter-list"></ul>
+        <button id="addChapter" class="btn full">+ Bab baru</button>
+        <button id="deleteChapter" class="btn danger full">Hapus bab ini</button>
+      </section>
+
+      <section>
+        <h2>Story Bible</h2>
+        <p class="hint">Tokoh, sifat, latar, aturan dunia, alur utama. Bagian ini selalu dikirim ke AI.</p>
+        <textarea id="bible" rows="14" placeholder="Contoh:&#10;Tokoh: Rani, 17 tahun, pemberani tapi ceroboh.&#10;Latar: kota pelabuhan kecil di tahun 1920-an."></textarea>
+      </section>
+    </aside>
+
+    <main class="editor">
+      <input id="chapterTitle" class="chapter-title" placeholder="Judul bab" />
+
+      <textarea id="chapterText" class="story-text" placeholder="Tulis ceritamu di sini, atau minta AI melanjutkan..."></textarea>
+
+      <section class="ai-box">
+        <h2>Minta AI menulis</h2>
+        <div class="row">
+          <input id="instruction" placeholder="Opsional, contoh: Rani menemukan surat misterius di laci." />
+          <button id="writeBtn" class="btn primary">Lanjutkan cerita</button>
+        </div>
+
+        <div id="preview" class="preview hidden">
+          <h3>Hasil AI (belum masuk ke cerita)</h3>
+          <textarea id="previewText" rows="8"></textarea>
+          <div class="row">
+            <button id="acceptBtn" class="btn primary">Tambahkan ke cerita</button>
+            <button id="retryBtn" class="btn">Coba lagi</button>
+            <button id="discardBtn" class="btn danger">Buang</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="summary-box">
+        <h2>Ringkasan bab ini</h2>
+        <p class="hint">Ringkasan inilah yang membuat AI "ingat" bab-bab lama tanpa harus membaca semuanya. Klik rangkum setelah bab selesai, lalu edit kalau perlu.</p>
+        <textarea id="summary" rows="5" placeholder="Belum ada ringkasan."></textarea>
+        <button id="summarizeBtn" class="btn">Rangkum otomatis dengan AI</button>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
