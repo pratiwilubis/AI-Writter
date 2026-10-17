@@ -1,0 +1,12 @@
+# Cerita pribadi, jangan ikut ke GitHub
+story.json
+story.tmp
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Sistem
+.DS_Store
+Thumbs.db
